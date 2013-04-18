@@ -1,0 +1,33 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    text-align: center;
+    display: block;
+    overflow: hidden;
+}
+
+#wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+}
+
+#demo {
+    width: 640px;
+    height: 512px;
+    display: inline-block;
+}
+
+#mod {
+    font-size: 250%;
+    color: #fff;
+}
+
+#pressPlay {
+    font-family: 'Bowlby One SC'
+}

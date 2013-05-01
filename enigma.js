@@ -1,5 +1,10 @@
+// ==ClosureCompiler==
+// @compilation_level ADVANCED_OPTIMIZATIONS
+// @output_file_name enigma.min.js
+// ==/ClosureCompiler==
+
 (function() {
-    var dev = true;
+    var dev = false;
     var rnd = Math.random;
     var timeOffset = 0;
     var frameDiff = 1;
@@ -1135,6 +1140,11 @@
         var offX = starOffsetX;
         context.fillStyle = "#ffffff";
         
+        var cosA = sinus[(a + 16384) & 0xffff]; // Math.cos(this.starRotation);
+        var sinA = sinus[a & 0xffff]; // Math.sin(this.starRotation);
+        var cosB = sinus[(b + 16384) & 0xffff]; // Math.cos(this.starRotation);
+        var sinB = sinus[b & 0xffff]; // Math.sin(this.starRotation);
+        
         for (var i = 0; i < starCount * currentQuality; ++i) {
             var star = sp[i];
             
@@ -1143,10 +1153,6 @@
             while (sx < -1.0) sx += 2.0;
             var sy = star.y;
             var sz = star.z;
-            var cosA = sinus[(a + 16384) & 0xffff]; // Math.cos(this.starRotation);
-            var sinA = sinus[a & 0xffff]; // Math.sin(this.starRotation);
-            var cosB = sinus[(b + 16384) & 0xffff]; // Math.cos(this.starRotation);
-            var sinB = sinus[b & 0xffff]; // Math.sin(this.starRotation);
             
             var sx2 = sx * cosA + sz * sinA;
             var sz2 = sz * cosA - sx * sinA;
